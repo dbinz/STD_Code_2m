@@ -1,0 +1,22 @@
+@media only screen and (max-width: 800px) and (min-width: 600px) {
+  .main {
+    flex-direction: column;
+  }
+  .nav{
+    position: relative;
+    gap: 0px;
+  }
+  .nav-contact{
+    position: absolute;
+    right: 50px;
+    flex-direction: row;
+    gap: 14px;
+  }
+  .nav-list{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .main-right{
+    width: 100%;
+  }
+}
