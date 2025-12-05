@@ -1,0 +1,19 @@
+@media only screen and (max-width: 1279px) and (min-width: 800px) {
+.main{
+    display: block;
+}
+.main-left-menu{
+    display: flex;
+}
+.main-left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.main-left-menu-item a{
+    padding:0
+}
+.main-left-footer{
+    display: none;
+}
+}
