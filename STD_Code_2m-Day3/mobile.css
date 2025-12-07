@@ -1,0 +1,101 @@
+@media only screen and (max-width: 799px) {
+    *{
+        font-size: 16px;
+    }
+    .main{
+        flex-direction: column;
+    }
+    .main-left-menu-item-btn{
+        display: block;
+        display: flex;
+        align-items: center;
+    }
+    .main-left-menu-item-btn a{
+        font-size: 18px;
+        padding : 10px 20px;
+    }
+    .main-left-menu{
+        display: none;
+    }
+    .main-left-footer{
+        display: none;
+    }
+    .main-left{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .main-right{
+        width: 100%;
+    }
+    .main-right-bottom-1 {
+        flex-direction: column;
+        align-items: center;
+    }
+    .main-right-bottom-1-title p{
+        padding: 10px 32px
+    }
+    .main-right-bottom-1-content p{
+        padding: 10px 32px
+    }
+    .main-right-bottom-2{
+        flex-direction: column; 
+    }
+    .main-right-bottom-2-title{
+        padding-bottom: 15px;
+    }
+    .main-right-bottom-3{
+        flex-direction: column;
+    }
+    .main-right-bottom-3-title p {
+    font-size: 50px;
+}
+    .main-right-bottom-3-title span {
+    font-size: 50px;
+}
+.main-right-bottom-3-content {
+    width: 100%;
+}
+.main-right-bottom-4-item{
+    flex-direction: column;
+}
+.main-right-bottom-4-item-title1 p {
+    font-size: 50px;
+}
+.main-right-bottom-4-item-title1 span {
+    font-size: 50px;
+}
+.main-right-bottom-4-item-content1{
+    width: 100%;
+}
+.main-right-bottom-4-item2-content3{
+    flex-direction: column;
+}
+.main-right-bottom-4-item3{
+    flex-direction: column;
+}
+.main-right-bottom-4-item3-title p {
+    font-size: 50px;
+}
+.main-right-bottom-4-item3-title span {
+    font-size: 50px;
+}
+.main-right-bottom-4-item3-content {
+    width: 100%;
+    padding-right: 32px;
+}
+.main-right-bottom-4-item4-row1{
+    flex-direction: column;
+}
+.main-right-bottom-4-item4-row2{
+    flex-direction: column;
+    padding-bottom: 40px;
+}
+.main-right-bottom-4-item4-row-img {
+    width: 95%;
+}
+.icon-close{
+    width: 3.5%;
+}
+}
