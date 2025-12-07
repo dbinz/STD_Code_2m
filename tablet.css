@@ -1,0 +1,53 @@
+@media only screen and (max-width: 1279px) and (min-width: 800px) {
+*{
+    font-size: 18px;
+}
+.main{
+    display: block;
+}
+.main-left-menu{
+    display: flex;
+}
+.main-left{
+    width: 100%;
+}
+.main-left-menu{
+    justify-content: space-around;
+    padding: 25px;
+}
+.main-left-menu-item a{
+    padding:0
+}
+.main-left-footer{
+    position: absolute;
+    right: 32px;
+}
+.main-right{
+    width: 100%;
+}
+.main-right-bottom-2-title{
+    width: 50%;
+}
+.main-right-bottom-3-title p{
+    font-size: 70px;
+}
+.main-right-bottom-3-title span{
+    font-size: 70px;
+}
+.main-right-bottom-4-item-title1 p{
+    font-size: 70px;
+}
+.main-right-bottom-4-item-title1 span{
+    font-size: 70px;
+}
+.main-right-bottom-4-item3-title p {
+    font-size: 70px;
+}
+.main-right-bottom-4-item3-title span {
+    font-size: 70px;
+}
+
+
+
+
+}
