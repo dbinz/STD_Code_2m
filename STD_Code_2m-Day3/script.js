@@ -19,6 +19,5 @@ nav.addEventListener("click", (event) => {
 close.addEventListener("click", (event) => {
   if (window.innerWidth <= 768) {
     menu.style.display = "none";
-    close.style.display = "none";
   }
 });
