@@ -1,0 +1,21 @@
+.red{
+    background-color: red;
+}
+
+.none{
+    display: none;
+}
+
+.block{
+    display: block;
+}
+
+.test{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+.boxshaw{
+    box-shadow: 0;
+}
