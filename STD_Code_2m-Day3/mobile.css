@@ -98,4 +98,23 @@
 .icon-close{
     width: 3.5%;
 }
+.main-right-img p{
+    font-size: 50px;
+    margin-left: 0px;
+}
+.main-right-img img{
+    width:100%
+}
+.main-right-img-flex {
+    align-items: flex-start;
+    gap: 15px;
+}
+.close-menu{
+    display: none;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+
 }
