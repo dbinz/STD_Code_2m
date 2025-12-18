@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form action="">
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          width: 300px;
+          margin: auto;
+        "
+      >
+        <label for="name">name</label>
+        <input class="name" name="name" type="text" />
+        <div class="text-err">this is field require</div>
+        
+        <label for="adrress">adrress</label>
+        <input class="adrress" name="adrress" type="text" />
+        <div class="text-err">this is field require</div>
+
+        <label for="Password">Password</label>
+        <input class="Password" name="Password" type="password" />
+        <div class="text-err">this is field require</div>
+
+        <div
+          style="
+            display: flex;
+            gap: 4px;
+            margin-top: 10px;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <button class="clear">clear</button>
+          <button class="submit">submit</button>
+        </div>
+      </div>
+    </form>
+    <script src="./script.js"></script>
+  </body>
+</html>

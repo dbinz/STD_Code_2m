@@ -5,6 +5,10 @@
     .main{
         flex-direction: column;
     }
+    .main-left-menu-item a:hover{
+        /* transform: scale(1.2); */
+        /* transform: translateY(-20px); */
+    }
     .main-left-menu-item-btn{
         display: block;
         display: flex;
