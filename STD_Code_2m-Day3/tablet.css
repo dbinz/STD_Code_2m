@@ -12,6 +12,7 @@
     width: 100%;
 }
 .main-left-menu{
+    flex-direction: row;
     justify-content: space-around;
     padding: 25px;
 }
