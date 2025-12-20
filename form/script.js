@@ -3,85 +3,92 @@ const submit = document.querySelector(".submit");
 const nameInput = document.querySelector(".name");
 const adrress = document.querySelector(".adrress");
 const Password = document.querySelector(".Password");
-const textErr = document.querySelector(".text-err");
+const textErr = document.querySelectorAll(".text-err");
+const submittedInfo = document.getElementById("submitted-info");
+const displayName = document.getElementById("display-name");
+const displayAddress = document.getElementById("display-address");
+const displayPassword = document.getElementById("display-password");
+
 console.log(textErr);
 
-// let nameInputs;
-// nameInput.addEventListener("change", (e)=>{
-//     nameInputs = e.target.value
-//     console.log(nameInputs);
-// })
+function toggleClearButton() {
+  const hasValue = nameInput.value || adrress.value || Password.value;
+  clear.style.display = hasValue ? "block" : "none";
+}
 
-// tạo cho a 1 form có 3 field như hôm qua và làm cho a các chức năng sau
-// th1: khi click sumbit ko điền value -> thông báo lỗi border đỏ + message như ảnh mẫ u
-// th2: khi a changes value trong input nếu a điền xong a lại xóa hết value đi thì nó sẽ thông báo border đỏ + message lỗi của filed đấy
-// th3: bắt user nhập đầy đủ tất cả các fled ko cần chỉ rõ là filed gì
-// th4: khi 1 trong 3 filed có value thì hiện nút Clear nếu a lại xóa value cả 3 filed đều k có value đi thì nut Clear sẽ ẩn , click thì nó sẽ reset lại giá trị = ""
-// th5: khi đầy đủ thông tin ấn sumbit thì sẽ hiện các thông tin fled bên cạnh form như ảnh mẫu thứ 2:
-
-const formName = nameInput.value;
-const formadrress = adrress.value;
-const password = Password.value;
-
-const objInput = {
-  names: formName,
-  form_adress: formadrress,
-  password,
-};
-
-nameInput.addEventListener("change", (e) => {
-  console.log(e.target.value);
-
-  if (e.target.value != "") {
-    nameInput.style.border = "1px solid black";
-    textErr.style.display = "none";
+function validateField(input, index) {
+  if (input.value.trim() === "") {
+    input.style.border = "1px solid red";
+    textErr[index].style.display = "block";
   } else {
-    nameInput.style.border = "1px solid red";
-    textErr.style.display = "block";
+    input.style.border = "1px solid black";
+    textErr[index].style.display = "none";
   }
-});
+  toggleClearButton();
+}
 
-adrress.addEventListener("change", (e) => {
-  console.log(e.target.value);
-  if (e.target.value != "") {
-    adrress.style.border = "1px solid black";
-    textErr.style.display = "none";
-  } else {
-    adrress.style.border = "1px solid red";
-    textErr.style.display = "block";
-  }
-});
-
-password.addEventListener("change", (e) => {
-  console.log(e.target.value);
-  if (e.target.value != "") {
-    Password.style.border = "1px solid black";
-    textErr.style.display = "none";
-  } else {
-    Password.style.border = "1px solid red";
-    textErr.style.display = "block";
-  }
-});
+nameInput.addEventListener("input", () => validateField(nameInput, 0));
+adrress.addEventListener("input", () => validateField(adrress, 1));
+Password.addEventListener("input", () => validateField(Password, 2));
 
 submit.addEventListener("click", (e) => {
   e.preventDefault();
-  if (
-    objInput.names === "" &&
-    objInput.form_adress == "" &&
-    objInput.password == ""
-  ) {
+  const formName = nameInput.value;
+  const formadrress = adrress.value;
+  const password = Password.value;
+
+  let allFilled = true;
+
+  if (formName === "") {
     nameInput.style.border = "1px solid red";
-    adrress.style.border = "1px solid red";
-    Password.style.border = "1px solid red";
+    textErr[0].style.display = "block";
+    allFilled = false;
   } else {
     nameInput.style.border = "1px solid black";
-    adrress.style.border = "1px solid black";
-    Password.style.border = "1px solid black";
-    // alert(`ban da dk thanh cong voi ten la ${objInput.names}`);
+    textErr[0].style.display = "none";
   }
-  console.log(objInput);
+
+  if (formadrress === "") {
+    adrress.style.border = "1px solid red";
+    textErr[1].style.display = "block";
+    allFilled = false;
+  } else {
+    adrress.style.border = "1px solid black";
+    textErr[1].style.display = "none";
+  }
+
+  if (password === "") {
+    Password.style.border = "1px solid red";
+    textErr[2].style.display = "block";
+    allFilled = false;
+  } else {
+    Password.style.border = "1px solid black";
+    textErr[2].style.display = "none";
+  }
+
+  if (allFilled) {
+    displayName.textContent = formName;
+    displayAddress.textContent = formadrress;
+    displayPassword.textContent = password;
+    submittedInfo.style.display = "block";
+  } else {
+    submittedInfo.style.display = "none";
+  }
+
+  console.log({ names: formName, form_adress: formadrress, password });
 });
 
 clear.addEventListener("click", (e) => {
   e.preventDefault();
+  nameInput.value = "";
+  adrress.value = "";
+  Password.value = "";
+  nameInput.style.border = "1px solid black";
+  adrress.style.border = "1px solid black";
+  Password.style.border = "1px solid black";
+  textErr.forEach((err) => (err.style.display = "none"));
+  submittedInfo.style.display = "none";
+  toggleClearButton();
 });
+
+toggleClearButton();
