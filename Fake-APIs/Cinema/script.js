@@ -29,7 +29,7 @@ const fetchMovie = async () => {
       const dataItem = mainContentItem(
         item.album_cover_url,
         item.tour_name,
-        ` ${item.duration} Minutes`,
+        Math.round(item.duration / 60000) + " phút",
         item.venue_name
       );
       mainContent.innerHTML += dataItem;
